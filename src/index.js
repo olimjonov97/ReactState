@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-// import Test from './testfile';
-// import State from './table';
-import Table from './CreateTable';
+import Test from'./testfile'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <Test /> */}
-    {/* <State name='Abror' /> */}
-    <Table/>
+    <Test/>
   </React.StrictMode>,
   document.getElementById('root')
 );

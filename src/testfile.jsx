@@ -1,67 +1,25 @@
-import React from 'react';
-import { data } from './data';
+import React, { Component } from 'react';
+import { navbar } from './MockData';
+import imga from './imga.png';
+import imgd from './imgd.png';
+import './App.css';
 
-class Test extends React.Component {
+class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      status: '',
-      data: {
-        status: 'OK',
-        datalist: data,
-      },
+      active: 'Home',
     };
   }
   render() {
-    const onDelete = (id) => {
-      let res = this.state.data.datalist.filter((item) => item.id !== id);
-      this.setState({
-        data: { ...this.state.data, datalist: res },
-      });
-    };
-    const onChange = (e) => {
-      this.setState({
-        [e.target.name]: e.target.value,
-      });
-    };
-    const onSave = () => {
-      const newData = {
-        id: Date.now(),
-        name: this.state.name,
-        status:this.state.status
-      }  
-      this.state.name.length && this.state.status.length?
-        this.setState({
-          data: {
-            ...this.state.data, datalist: [...this.state.data.datalist, newData]
-          },
-          name: '',
-          status:''
-        }) : alert('please fill out');
-    }
     return (
-      <div>
-        <input
-          value={this.state.name}
-          onChange={onChange}
-          name='name'
-          placeholder='name'
-          type='text'
-        />
-        <input
-          value={this.state.status}
-          onChange={onChange}
-          name='status'
-          placeholder='status'
-          type='text'
-        />
-        <button onClick={onSave}>save</button>
-        {this.state.data.datalist.map((value, index) => (
-          <h1 key={value.id}>
-            {index + 1}
-            {value.name} {value.status}{' '}
-            <button onClick={() => onDelete(value.id)}>delete</button>
+      <div className='navbar'>
+        {navbar.map(({id,title}) => (
+          <h1 key={id}
+            onClick={() => this.setState({ active: title })}
+            className={`link ${this.state.active === title && 'active'}`}
+          >
+            {title}
           </h1>
         ))}
       </div>
@@ -69,3 +27,37 @@ class Test extends React.Component {
   }
 }
 export default Test;
+{
+  /* <div className='navbar'>
+        <h1
+          onClick={() => this.setState({ active: 'home' })}
+          className={`link ${this.state.active === 'home' && 'active'}`}
+        >
+          Home
+        </h1>
+        <h1
+          onClick={() => this.setState({ active: 'about' })}
+          className={`link ${this.state.active === 'about' && 'active'}`}
+        >
+          About
+        </h1>
+        <h1
+          onClick={() => this.setState({ active: 'contacts' })}
+          className={`link ${this.state.active === 'contacts' && 'active'}`}
+        >
+          Contacts
+        </h1>
+        <div>
+          {' '}
+          <img
+            src={this.state.active ? imga : imgd}
+            alt="Abror's img"
+            width='150'
+          />
+          {this.state.active ? <h1>welcome</h1> : <h1>please login</h1>}
+          <button onClick={() => this.setState({ active: !this.state.active })}>
+            {this.state.active ? 'LogOut ' : 'LogIn'}
+          </button>
+        </div>
+      </div> */
+}
