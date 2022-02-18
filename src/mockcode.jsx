@@ -1,33 +1,5 @@
-import React, { Component } from 'react';
-import { navbar } from './MockData';
-import imga from './imga.png';
-import imgd from './imgd.png';
-import './App.css';
-
-class Test extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: 'Home',
-    };
-  }
-  render() {
-    return (
-      <div className='navbar'>
-        {navbar.map(({id,title}) => (
-          <h1 key={id}
-            onClick={() => this.setState({ active: title })}
-            className={`link ${this.state.active === title && 'active'}`}
-          >
-            {title}
-          </h1>
-        ))}
-      </div>
-    );
-  }
-}
-export default Test;
-{
+// ContionalRendering Codes
+// {
   /* <div className='navbar'>
         <h1
           onClick={() => this.setState({ active: 'home' })}
@@ -60,4 +32,15 @@ export default Test;
           </button>
         </div>
       </div> */
-}
+// }
+    // {
+    //   navbar.map(({ id, title }) => (
+    //     <h1
+    //       key={id}
+    //       onClick={() => this.setState({ active: title })}
+    //       className={`link ${this.state.active === title && 'active'}`}
+    //     >
+    //       {title}
+    //     </h1>
+    //   ));
+    // }

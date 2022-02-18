@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Test from'./testfile'
+import StyledComponent from './StyledComponent';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Test/>
+    <StyledComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );
