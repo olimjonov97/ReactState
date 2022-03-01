@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Container = styled.div`
   margin: 0;
@@ -31,79 +31,46 @@ export const Box = styled.div`
   margin: 10px;
 `;
 export const Input = styled.input`
-  color:black;
+  color: black;
   background-color: grey;
 `;
-export const Button = styled.button`
-  width: ${({width})=>width?`${width}px`:'100px'};
-  height: ${({height})=>height?`${height}px`:'100px'};
-  cursor:pointer;
-  border-radius:5px;
-  border:none;
-  :hover{
+const common = css`
+  width: ${({ width }) => (width ? `${width}px` : '100px')};
+  height: ${({ height }) => (height ? `${height}px` : '100px')};
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  :hover {
     background-color: grey;
   }
-  :active{
+  :active {
     transform: scale(0.97);
-  
   }
 `;
-// export const Small = styled.div`
-//   text-align: center;
-//   width: 100px;
-//   height: 100px;
-//   border: 1 solid red;
-//   background: yellowgreen;
-//   margin:10px;
-// `;
-
-// const getSize = ({ type }) => {
-//   console.log(type);
-//   switch (type) {
-//     case 'large':
-//       return '200px';
-//     case 'medium':
-//       return '150px';
-//     case 'small':
-//       return '100px';
-//     default:
-//       return '150px';
-//   }
-// };
-// export const Box = styled.div`
-//   width: ${getSize};
-//   height: ${getSize};
-//   background-color: purple;
-//   margin: 10px;
-
-//   ${(props) => console.log(props)}
-// `;
-// export const Input = styled.input`
-//   color: grey;
-//   background-color: whitesmoke;
-// `;
-// export const Button = styled.button`
-//   width: ${({width}) => width ?`${width}px`:'200px'};
-//   color: white;
-//   border:0;
-//   background-color: blue;
-//   cursor:pointer;
-//   :active{
-//       transform: scale(0.97);
-//   }
-// `;
-// export const Box = styled.div`
-//   width: ${({ large }) => (large ? '200px' : '100px')};
-//   height: ${(props) => (props.large ? '200px' : '100px')};
-//   background-color: purple;
-//   margin: 10px;
-
-//   ${(props) => console.log(props)}
-// `;
-
-// export const Small = styled.div`
-//     margin:10px;
-//     width:100px;
-//     height:100px;
-//     background-color: purple;
-//     `
+export const Button = styled.button`
+  ${common}
+`;
+export const InheritedBtn = styled(Button)`
+  :active {
+    transform: scale(0.97);
+    background-color: blue;
+  }
+`;
+const rotate = keyframes`
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(360deg)
+  }
+`
+export const Rotatebtn = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  border-radius: 50%;
+  animation:${rotate} 5s linear infinite;
+`;

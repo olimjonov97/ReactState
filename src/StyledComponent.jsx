@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { navbar } from './MockData';
-import { Container, Title, Box, Input } from './style';
+import { Container, Title, Box, Input, InheritedBtn, Rotatebtn } from './style';
 import GenericButton  from'./Button'
 
 class StyledComponent extends Component {
@@ -14,7 +14,15 @@ class StyledComponent extends Component {
         <h1>StyledComponent</h1>
         <Title>Styledtitle</Title>
         <Input />
-        <GenericButton width={150} height={20}>Click me</GenericButton>
+        <InheritedBtn width={150} height={20}>
+          BTN
+        </InheritedBtn>
+        <GenericButton width={150} height={20}>
+          Click me
+        </GenericButton>
+        <Rotatebtn width={150} height={20}>
+        Rotate
+        </Rotatebtn>
         <Box type='large'>large</Box>
         <Box type='medium'>medium</Box>
         <Box type='small'>small</Box>
