@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import StyledComponent from './StyledComponent';
-import Main from './Greenshop/main';
+import Active from './Greenshop/Active';
 
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <StyledComponent /> */}
-    <Main/>
+    <Active/>
   </React.StrictMode>,
   document.getElementById('root')
 );
