@@ -12,18 +12,17 @@ import { Flowers } from '../MockData';
 
 class Item extends Component {
   state = {
-    data: Flowers,
     count: 1,
   };
   render() {
     const { value } = this.props;
     return (
-      <Card key={value.id}>
+      <Card>
         <Image src={value.src} />
         <h1>{value.name}</h1>
         <h3>$ {value.price}</h3>
         <h2>
-          --Count:{this.state.count}
+          Count:{this.state.count}
           <button
             onClick={() => this.setState({ count: this.state.count - 1 })}
           >
