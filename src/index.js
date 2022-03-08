@@ -4,15 +4,15 @@ import './index.css';
 // import StyledComponent from './StyledComponent';
 // import Active from './Greenshop/Active';
 import Class from './Class';
-import Hooks from './Hooks'
+import HookPro from './HookPro'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <div style={{display:'flex'}}>
 
-    <Class/>
-    <Hooks/>
+    {/* <Class/> */}
+    <HookPro/>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
