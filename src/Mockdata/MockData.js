@@ -1,9 +1,9 @@
-import image1 from './Images/image1.png';
-import image2 from './Images/image2.png';
-import image3 from './Images/image3.png';
-import image4 from './Images/image4.png';
-import image5 from './Images/image5.png';
-import image6 from './Images/image6.png';
+import image1 from '../assets/Images/image1.png'
+import image2 from '../assets/Images/image2.png';
+import image3 from '../assets/Images/image3.png';
+import image4 from '../assets/Images/image4.png';
+import image5 from '../assets/Images/image5.png';
+import image6 from '../assets/Images/image6.png';
 export const Flowers = [
   {
     id: 1,

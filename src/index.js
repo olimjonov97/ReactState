@@ -1,21 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import StyledComponent from './StyledComponent';
-// import Active from './Greenshop/Active';
-import Class from './Class';
-import HookPro from './HookPro'
-
+import Root from './root';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div style={{display:'flex'}}>
-
-    {/* <Class/> */}
-    <HookPro/>
-    </div>
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
