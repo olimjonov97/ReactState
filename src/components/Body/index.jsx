@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container } from './style';
-const Body = ({ data, onDelete }) => {
+import { FlowersContext } from '../../context';
+const Body = (props) => {
+  const [data, setData] = useContext(FlowersContext);
+  const onDelete = id => {
+    console.log(id);
+    const res = data.filter((value) => value.id !== id);
+    setData(res);
+  }
   return (
     <Container>
       {data.map((value) => (
