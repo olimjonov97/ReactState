@@ -1,11 +1,10 @@
 import React,{useContext} from 'react';
 import { Container } from './style';
-import { FlowersContext } from '../../context';
+import {FlowersContext}from'../../context'
 
-const Navbar = (props) => {
+const Navbar = ({ count }) => {
   const [data] = useContext(FlowersContext);
-  console.log('Navbar',data);
-     return (
+  return (
     <Container>
       <h1>Webbain Academy Count:{data.length}</h1>
       <h3>Home</h3>

@@ -5,15 +5,12 @@ import { Flowers } from '../Mockdata/MockData';
 
 const Root = () => {
   const [data, setData] = useState(Flowers);
-  const onDelete = id => {
-    const res = data.filter(value => value.id !== id)
-    setData(res);
-  }
+ 
 
   return (
     <div>
-      <Navbar count={data.length} />
-      <Body onDelete={onDelete} data={data} />
+      <Navbar />
+      <Body />
     </div>
   );
 };
